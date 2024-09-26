@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 
 function App() {
-  const { loginWithRedirect,logout,isAuthenticated  } = useAuth0();
+  const { loginWithRedirect,logout,isAuthenticated,user  } = useAuth0();
   // if (isLoading) {
   //   return <div>Loading ...</div>;
   // }
@@ -25,6 +25,12 @@ function App() {
     :
     <button onClick={() => loginWithRedirect()}>Log In</button>
     }
+    <div>{
+
+
+
+isAuthenticated && <h2>{user.email}</h2>
+      }</div>
     </div>
   );
 }
